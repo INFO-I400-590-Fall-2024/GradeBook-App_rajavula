@@ -9,6 +9,7 @@ export default function FirebaseFetcher() {
   const [name, setName] = useState('');
   const [grade, setGrade] = useState('');
   const [absences, setAbsences] = useState('');
+  //students, showForm, name, grade, absences are initialised
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,6 +23,7 @@ export default function FirebaseFetcher() {
 
     fetchData();
   }, []);
+  //to fetch the data
 
   const addStudent = async () => {
     try {
@@ -70,7 +72,7 @@ export default function FirebaseFetcher() {
       ) : (
         <Button title="Add New Student" onPress={() => setShowForm(true)} />
       )}
-
+      
       <View style={styles.studentList}>
         {students.map((student) => (
           <View key={student.id} style={styles.studentItem}>
@@ -80,7 +82,10 @@ export default function FirebaseFetcher() {
           </View>
         ))}
       </View>
+      
     </ScrollView>
+    //scrollview is to scroll the data
+    //Map is used to iterate student array object.
   );
 }
 
@@ -92,7 +97,8 @@ const styles = StyleSheet.create({
   },
   form: {
     marginBottom: 20,
-    width: '100%', // Form width to center within the container
+    width: '100%', 
+    // Form width to center within the container
     
   },
   input: {
@@ -105,10 +111,11 @@ const styles = StyleSheet.create({
   },
   studentList: {
     marginTop: 20,
-    alignItems: 'center', // Centers each student item horizontally
+    alignItems: 'center', 
+    // Centers each student item horizontally
   },
   studentItem: {
-    alignItems: 'center', // Centers each student data point
+    alignItems: 'center', 
     marginBottom: 15,
     padding: 10,
     borderWidth: 1,
@@ -117,6 +124,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: 'rgb(204,217,230)',
     borderRadius: 30,
+    // Centers each student data point
   },
   name: {
     fontWeight: 'bold',
@@ -134,3 +142,4 @@ const styles = StyleSheet.create({
     color: '#888',
   },
 });
+//To style the page

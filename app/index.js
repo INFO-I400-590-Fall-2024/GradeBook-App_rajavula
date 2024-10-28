@@ -12,3 +12,4 @@ export default function App() {
     <FirebaseFetcher />
   );
 }
+//imports FirebaseFetcher from components
